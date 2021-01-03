@@ -10,9 +10,9 @@
     <div class="container">
         <div class="login">
             <form class="login-form" method="post" action="dashboard.php">
-                <input class="usr" name="uid" type="text" placeholder="username">
+                <input class="usr" name="unm" type="text" placeholder="username">
                 <input class="pwd" name="upwd" type="password" placeholder="password">
-                <input class="btn" type="submit" name="login-submit" value="Login" placeholder="username">
+                <input class="btn" type="submit" name="login-submit" value="Login">
             </form>
         </div>
     </div>
