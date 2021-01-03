@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+/*
+    background-color: yellow;
+    color: blue;
+    height: 957px;
+    display: block;
+    border: 1px solid green;
+*/
+}
+
+.login {
+    background-color: #F2D200;
+    width: auto;
+    height: 68vh;
+    padding: 100px;
+/*
+    margin-top: 50px;
+    margin-bottom: 50px;
+*/
+    margin: 50px;
+    position: center;
+    border: 1px solid black;
+}
+
+.login-form {
+    border: 1px solid pink;
+    height: 100%;
+    text-align: center;
+    padding: 10px;
+    color: black;
+    background-color: #4D4D4D;
+}
+
+.usr {
+    top: 50%;
+    position: relative;
+    padding: 10px;
+    left: 2%;
+    text-align: center;
+}
+
+.pwd {
+    top: 50%;
+    left: 2%;
+    position: relative;
+    padding: 10px;
+    text-align: center;
+}
+
+.btn {
+    top: 60%;
+    right: 14%;
+    padding-left: 40px;
+    padding-right: 40px;
+    position: relative;
+}
