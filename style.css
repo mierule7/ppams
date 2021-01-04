@@ -59,3 +59,52 @@ body {
     padding-right: 40px;
     position: relative;
 }
+
+.top-bar {
+    border: 1px solid blue;
+    position: relative;
+}
+
+.navbar {
+    border: 1px solid blue;
+    position: inherit;
+    background-color: grey;
+    width: 100%;
+    display: flex;
+    text-align: center;
+}
+
+.logo {
+    border: 1px solid red;
+/*    text-align: center;*/
+    width: 100%;
+}
+
+.notification {
+    border: 1px solid yellow;
+    position: static;
+    height: 50%;
+    padding: 10px;
+    margin: 5px;
+}
+.notify {
+    float: center;
+}
+
+.logout {
+    float: right;
+    position: inherit;
+    padding: 10px;
+    margin: 5px;
+}
+
+.side {
+    color: black;
+}
+
+.menu-list {
+    background-color: #F2D200;
+    width: 338px;
+    height: 976px;
+    overflow: hidden;
+}
