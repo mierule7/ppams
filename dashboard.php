@@ -17,6 +17,22 @@
 <?php include 'sidenav.php'; ?>
 
 <!-- **************************************************************** -->
+
+
+<main>
+    <div class="hardware">
+        
+    </div>
+</main>
+
+
+
+
+
+
+
+
+
 <!-- ******************** THIS IS FOR FOOTER ************************ -->
 
 <?php include 'footer.php'; ?>
