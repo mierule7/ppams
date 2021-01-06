@@ -1,6 +1,6 @@
 <header>
   <div class=outer-wrapper>
-    <nav class="nav-bar" id="myTopnav">
+    <nav class="side" id="myTopnav">
 
         <!--    LOGO  -->
 <!--
@@ -8,17 +8,30 @@
          <a href="index.php"><img src="img/logo.png"></a>
      </div>
 -->
-
+    <div class="icon">
+        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#home">Profile</a>
+            <a href="#about">Change Password</a>
+          </div>
+<!--
+        <form action="profile.php" method="post" enctype="multipart/form-data"></form>
+        <input type="file" name="profileImage" id="profileImage" class="image-control">
+-->
+    </div>
       <!-- NAVIGATION -->
-      <ul class="menu-list">
-        <li><a href="home.php">Dashboard</a></li>
-        <li><a href="service.php">User</a></li>
-        <li><a href="clients.php">Inventory</a></li>
-        <li><a href="aboutus.php">Vendor List</a></li>
-        <li><a href="contactus.php">Request</a></li>
-        <li><a href="contactus.php">System Log</a></li>
-        <li><a href="contactus.php">Setting</a></li>
-      </ul>
+      <div class="sidemenu">
+          <ul class="menu-list">
+            <li><a href="dashboard.php">Dashboard</a></li>
+            <li><a href="user.php">User</a></li>
+            <li><a href="inventory.php">Inventory</a></li>
+            <li><a href="vendorlist.php">Vendor List</a></li>
+            <li><a href="request.php">Request</a></li>
+            <li><a href="systemlog.php">System Log</a></li>
+            <li><a href="setting.php">Setting</a></li>
+          </ul>
+      </div>
+      
 
         <!-- BARS -->
 <!--

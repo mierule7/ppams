@@ -36,7 +36,8 @@ body {
     background-color: #4D4D4D;
 }
 
-.usr {
+.usr 
+{
     top: 50%;
     position: relative;
     padding: 10px;
@@ -44,7 +45,8 @@ body {
     text-align: center;
 }
 
-.pwd {
+.pwd 
+{
     top: 50%;
     left: 2%;
     position: relative;
@@ -52,7 +54,8 @@ body {
     text-align: center;
 }
 
-.btn {
+.btn 
+{
     top: 60%;
     right: 14%;
     padding-left: 40px;
@@ -60,7 +63,8 @@ body {
     position: relative;
 }
 
-.top-bar {
+.top-bar 
+{
     border: 1px solid blue;
     position: relative;
 }
@@ -80,31 +84,85 @@ body {
     width: 100%;
 }
 
-.notification {
+.notification 
+{
     border: 1px solid yellow;
-    position: static;
-    height: 50%;
+    position: fixed;
     padding: 10px;
     margin: 5px;
+    z-index: 1;
+    right:10%;
 }
-.notify {
+.notify 
+{
     float: center;
 }
 
-.logout {
-    float: right;
-    position: inherit;
+.logout 
+{
     padding: 10px;
     margin: 5px;
+    z-index: 1;
+    position: fixed;
+    right: 2%;
 }
 
-.side {
+.side 
+{
     color: black;
+    width: 338px;
 }
 
-.menu-list {
-    background-color: #F2D200;
+.sidemenu 
+{
     width: 338px;
-    height: 976px;
+    background-color: #F2D200;
     overflow: hidden;
+}
+
+.menu-list 
+{
+    width: 338px;
+    height: 850px;
+    padding: 0;
+    margin-top: 0;
+    list-style-type: none;
+    /*
+    position: absolute;
+    z-index: -1;
+*/
+/*    background-color: #F2D200;*/
+}
+
+.menu-list a 
+{
+    text-decoration: none;
+    background-color: white;
+    padding: 30px 8px 30px 16px;
+    display: block;
+    border: 1px solid #707070;
+    text-align: center;
+
+}
+
+.menu-list a:hover {
+  color: red;
+}
+
+
+
+.icon 
+{
+/*    border: 1px solid green;*/
+    text-align: center;
+    background-color: #F2D200;
+    padding: 50px 0;
+    width: 338px;
+}
+
+.dropbtn 
+{
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
 }
