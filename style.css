@@ -91,10 +91,11 @@ body {
     margin: 5px;
     z-index: 1;
     right:10%;
+    float: right;
 }
 .notify 
 {
-    float: center;
+    float: right;
 }
 
 .logout 
@@ -194,4 +195,134 @@ body {
 .show 
 {
     display: block;
+}
+
+/* On screens that are 992px wide or less, the background color is blue */
+@media screen and (max-width: 992px) 
+{
+    .notification 
+    {
+        border: 1px solid yellow;
+        position: absolute;
+        padding: 10px;
+        margin: 5px;
+        z-index: 1;
+        right:15%;
+        float: right;
+    }
+
+    .logout 
+    {
+        padding: 10px;
+        margin: 5px;
+        z-index: 1;
+        position: absolute;
+        right: 2%;
+    }
+
+}
+
+@media screen and (max-width: 600px) 
+{
+        .notification 
+    {
+        border: 1px solid green;
+        display: none;
+        z-index: 1;
+        float: left;
+    }
+
+    .logout 
+    {
+        padding: 10px;
+        margin: 5px;
+        z-index: 1;
+        position: absolute;
+        right: 2%;
+    }
+    
+    .sidemenu 
+    {
+        width: 36px;
+        background-color: #F2D200;
+        overflow: hidden;
+    }
+
+    .menu-list 
+    {
+        width: 390px;
+        height: 850px;
+        padding: 0;
+        margin-top: 0;
+        list-style-type: none;
+    }
+
+.menu-list a 
+{
+    text-decoration: none;
+    background-color: white;
+    padding: 30px 8px 30px 16px;
+    display: block;
+    border: 1px solid #707070;
+    text-align: center;
+
+}
+
+.menu-list a:hover {
+  color: red;
+}
+
+
+
+.icon 
+{
+    text-align: center;
+    background-color: #F2D200;
+    padding: 50px 0;
+    width: 338px;
+    display: inline-block;
+}
+
+.dropbtn 
+{
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: green;
+}
+
+.dropdown-content 
+{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 338px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.icon a:hover 
+{
+    background-color: green;
+}
+
+.show 
+{
+    display: block;
+}
+
 }
