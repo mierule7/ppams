@@ -197,7 +197,7 @@ body {
     display: block;
 }
 
-/* On screens that are 992px wide or less, the background color is blue */
+/* On screens that are 992px wide or less, the background will change*/
 @media screen and (max-width: 992px) 
 {
     .notification 
@@ -243,7 +243,7 @@ body {
     
     .sidemenu 
     {
-        width: 36px;
+        width: 485px;
         background-color: #F2D200;
         overflow: hidden;
     }
@@ -254,75 +254,133 @@ body {
         height: 850px;
         padding: 0;
         margin-top: 0;
+        margin-left: 10%;
         list-style-type: none;
     }
 
-.menu-list a 
-{
-    text-decoration: none;
-    background-color: white;
-    padding: 30px 8px 30px 16px;
-    display: block;
-    border: 1px solid #707070;
-    text-align: center;
+    .menu-list a 
+    {
+        text-decoration: none;
+        background-color: white;
+        padding: 30px 8px 30px 16px;
+        display: block;
+        border: 1px solid #707070;
+        text-align: center;
 
-}
+    }
 
-.menu-list a:hover {
-  color: red;
-}
+    .menu-list a:hover 
+    {
+      color: red;
+    }
 
+    .icon 
+    {
+        text-align: center;
+        background-color: #F2D200;
+        padding: 50px 0;
+        width: 485px;
+        display: inline-block;
+    }
 
+    .dropbtn 
+    {
+        border-radius: 50%;
+        height: 100px;
+        width: 100px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
 
-.icon 
-{
-    text-align: center;
-    background-color: #F2D200;
-    padding: 50px 0;
-    width: 338px;
-    display: inline-block;
-}
+    .dropbtn:hover, .dropbtn:focus 
+    {
+      background-color: green;
+    }
 
-.dropbtn 
-{
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-}
+    .dropdown-content 
+    {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 338px;
+        margin-left: 15%;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
 
-.dropbtn:hover, .dropbtn:focus {
-  background-color: green;
-}
+    .dropdown-content a 
+    {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
 
-.dropdown-content 
-{
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 338px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
+    .icon a:hover 
+    {
+        background-color: green;
+    }
 
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
+    .show 
+    {
+        display: block;
+    }
+    
+/*******************    This is login form    ******************/
+    
 
-.icon a:hover 
-{
-    background-color: green;
-}
+    .login 
+    {
+        background-color: #F2D200;
+        width: auto;
+        height: 68vh;
+        padding: 100px;
+        margin: 50px;
+        position: center;
+        border: 1px solid black;
+    }
 
-.show 
-{
-    display: block;
-}
+    .login-form 
+    {
+        border: 1px solid pink;
+        height: 100%;
+        width: 1000px;
+        text-align: center;
+        padding: 10px;
+        color: black;
+        background-color: #4D4D4D;
+    }
+
+    .usr 
+    {
+        position: relative;
+        padding: 5px;
+        margin: 2px;
+        float: inherit;
+        display: block;
+    }
+
+    .pwd 
+    {
+        top: 50%;
+        left: 2%;
+        position: relative;
+        padding: 10px;
+        text-align: center;
+        display: block;
+    }
+
+    .btn 
+    {
+        top: 60%;
+        right: 14%;
+        padding-left: 40px;
+        padding-right: 40px;
+        position: relative;
+        display: block;
+    }
+
 
 }
