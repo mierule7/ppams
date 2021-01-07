@@ -3,15 +3,7 @@ body {
     padding: 0;
 }
 
-.container {
-/*
-    background-color: yellow;
-    color: blue;
-    height: 957px;
-    display: block;
-    border: 1px solid green;
-*/
-}
+/*******************    This is login form    ******************/
 
 .login {
     background-color: #F2D200;
@@ -63,14 +55,16 @@ body {
     position: relative;
 }
 
+/*******************    This is top bar    ******************/
+
 .top-bar 
 {
-    border: 1px solid blue;
+/*    border: 1px solid blue;*/
     position: relative;
 }
 
 .navbar {
-    border: 1px solid blue;
+/*    border: 1px solid blue;*/
     background-color: grey;
     width: 100%;
     display: flex;
@@ -78,24 +72,19 @@ body {
 }
 
 .logo {
-    border: 1px solid red;
+/*    border: 1px solid red;*/
 /*    text-align: center;*/
     width: 100%;
 }
 
 .notification 
 {
-    border: 1px solid yellow;
+/*    border: 1px solid yellow;*/
     position: absolute;
     padding: 10px;
     margin: 5px;
     z-index: 1;
     right:10%;
-    float: right;
-}
-.notify 
-{
-    float: right;
 }
 
 .logout 
@@ -107,10 +96,12 @@ body {
     right: 2%;
 }
 
+/*******************    This is sidemenu    ******************/
+
 .side 
 {
     color: black;
-    width: 338px;
+    width: 100%;
 }
 
 .sidemenu 
@@ -123,7 +114,7 @@ body {
 .menu-list 
 {
     width: 338px;
-    height: 850px;
+    height: 703px;
     padding: 0;
     margin-top: 0;
     list-style-type: none;
@@ -197,9 +188,52 @@ body {
     display: block;
 }
 
+/*******************    This is main content    ******************/
+
+.main-wrapper 
+{
+/*    border: 1px solid green;*/
+    height: 94.7%;
+    width: 1580px;
+    top: 50px;
+    left: 338px;
+    overflow: hidden;
+    position: absolute;
+    display: inline-block;    
+    float:right;
+    background-color: #CECECE;
+}
+
+
+.listing 
+{
+    position: relative;
+    border: 1px solid green;
+    text-align: center;
+    list-style-type: none;
+    top: 20%;
+/*
+    bottom: 50%;
+    margin: 5%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+*/
+    background-color: #F2D200;
+    display: inline-block;
+}
+
+
+/*******************    END OF BIG SCREEN SETTING    ******************/
+
+
+/*******************    START OF SMALL SCREEN SETTING    ******************/
+
+/* For smaller screen */
 /* On screens that are 992px wide or less, the background will change*/
 @media screen and (max-width: 992px) 
 {
+    
+    /*******************    This is top bar    ******************/
     .notification 
     {
         border: 1px solid yellow;
@@ -222,8 +256,12 @@ body {
 
 }
 
+/* On screens that are 600px wide or less, the background will change*/
+
 @media screen and (max-width: 600px) 
 {
+    /*******************    This is top bar    ******************/
+    
         .notification 
     {
         border: 1px solid green;
@@ -241,6 +279,8 @@ body {
         right: 2%;
     }
     
+    /*******************    This is sidemenu    ******************/
+    
     .sidemenu 
     {
         width: 485px;
@@ -251,7 +291,7 @@ body {
     .menu-list 
     {
         width: 390px;
-        height: 850px;
+        height: 670px;
         padding: 0;
         margin-top: 0;
         margin-left: 10%;

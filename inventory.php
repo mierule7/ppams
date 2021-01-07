@@ -22,32 +22,17 @@
 
 
 
-
-
-
-<!-- ******************** THIS IS FOR SCRIPTING ************************ -->
-
-<!-- ***************** THIS IS FOR DROP DOWN ICON ********************** -->
-
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-  if (!e.target.matches('.dropbtn')) {
-  var myDropdown = document.getElementById("myDropdown");
-    if (myDropdown.classList.contains('show')) {
-      myDropdown.classList.remove('show');
-    }
-  }
-}
-</script>
-
-<!-- **************************************************************** -->
+<main>
+    <div class="main-wrapper">
+     <div class="back-colour">
+         <ul class="listing">
+          <li><a href="">Hardware</a></li>
+          <li><a href="">Software</a></li>
+      </ul>
+     </div>
+      
+    </div>
+</main>
 
 
 
