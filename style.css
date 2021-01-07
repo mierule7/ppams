@@ -1,7 +1,21 @@
+@font-face 
+{
+  font-family: LuckiestGuy-Regular;
+  src: url(font/LuckiestGuy-Regular.ttf);
+}
+
+@font-face 
+{
+  font-family: BungeeShade-Regular;
+  src: url(font/BungeeShade-Regular.ttf);
+}
+
 body {
     margin: 0;
     padding: 0;
+    font-family: LuckiestGuy-Regular;
 }
+
 
 /*******************    This is login form    ******************/
 
@@ -94,6 +108,7 @@ body {
     z-index: 1;
     position: absolute;
     right: 2%;
+    
 }
 
 /*******************    This is sidemenu    ******************/
@@ -131,8 +146,10 @@ body {
 
 }
 
-.menu-list a:hover {
-  color: red;
+.menu-list a:hover 
+{
+    color: white;
+    background-color: purple;
 }
 
 
@@ -193,15 +210,14 @@ body {
 .main-wrapper 
 {
 /*    border: 1px solid green;*/
-    height: 94.7%;
-    width: 1580px;
+    height: 9%;
+    width: 100%;
     top: 50px;
     left: 338px;
     overflow: hidden;
     position: absolute;
-    display: inline-block;    
-    float:right;
     background-color: #CECECE;
+    display: flex;
 }
 
 
@@ -311,7 +327,7 @@ body {
 
     .menu-list a:hover 
     {
-      color: red;
+        background-color: purple;
     }
 
     .icon 
@@ -420,6 +436,13 @@ body {
         padding-right: 40px;
         position: relative;
         display: block;
+    }
+    
+    /*******************    This is main content    ******************/
+
+    .main-wrapper 
+    {
+        display: none;
     }
 
 
