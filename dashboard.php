@@ -20,8 +20,16 @@
 
 
 <main>
-    <div class="hardware">
-        
+    <div class="main-wrapper">
+     <div class="back-colour">
+         <ul class="listing">
+          <li><a href="">Hardware</a></li>
+          <li><a href="">Software</a></li>
+          <li><a href="">Request</a></li>
+          <li><a href="">Search</a></li>
+      </ul>
+     </div>
+      
     </div>
 </main>
 
