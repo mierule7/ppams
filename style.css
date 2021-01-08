@@ -123,46 +123,14 @@ img {
 
 /*******************    This is sidemenu    ******************/
 
-.side 
-{
-    color: black;
-    width: 100%;
-}
-
-.sidemenu 
-{
-    width: 338px;
+.sidemenu {
     background-color: #F2D200;
-    overflow: hidden;
-}
-
-.menu-list 
-{
+    position: fixed;
+    height: 100%;
     width: 338px;
-    height: 699px;
+    margin: 0;
     padding: 0;
-    margin-top: 0;
-    list-style-type: none;
 }
-
-.menu-list a 
-{
-    text-decoration: none;
-    background-color: white;
-    padding: 30px 8px 30px 16px;
-    display: block;
-    border: 1px solid #707070;
-    text-align: center;
-
-}
-
-.menu-list a:hover 
-{
-    color: white;
-    background-color: purple;
-}
-
-
 
 .icon 
 {
@@ -183,8 +151,9 @@ img {
     cursor: pointer;
 }
 
-.dropbtn:hover, .dropbtn:focus {
-  background-color: green;
+.dropbtn:hover, .dropbtn:focus 
+{
+    background-color: green;
 }
 
 .dropdown-content 
@@ -198,11 +167,12 @@ img {
     z-index: 1;
 }
 
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+.dropdown-content a 
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
 
 .icon a:hover 
@@ -214,6 +184,35 @@ img {
 {
     display: block;
 }
+
+.menu-list 
+{
+    width: 338px;
+    height: 699px;
+    padding: 0;
+    margin-top: 0;
+    list-style-type: none;
+}
+
+.menu-list a 
+{
+    text-decoration: none;
+    background-color: white;
+    padding: 30px 8px 30px 16px;
+    display: block;
+    border: 1px solid #707070;
+    text-align: center;
+}
+
+.menu-list a:hover 
+{
+    color: white;
+    background-color: purple;
+}
+
+
+/*******************   End of sidemenu    ******************/
+
 
 /*******************    This is main content    ******************/
 
