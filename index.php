@@ -10,6 +10,7 @@
 <body>
     <div class="container">
         <div class="login">
+           <img src="img/backgroundimage_asset.png" width="90"/> 
             <form class="login-form" method="post" action="dashboard.php">
                 <input class="usr" name="unm" type="text" placeholder="username">
                 <input class="pwd" name="upwd" type="password" placeholder="password">
