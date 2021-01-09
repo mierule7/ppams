@@ -1,46 +1,89 @@
 <?php
+// Initialize the session
+session_start();
 
-if (isset($_POST['login-submit'])) { // Check did/do we name attribute name login-submit
-
-  require 'db.config.php'; // grab the connection to database
-
-  $username = $_POST['unm'];// Grab the information when user insert on login
-  $password = $_POST['upwd'];
-
-  if (empty($username) || empty($password)) { // Check if these information where left empty
-    header("Location:index.php?error=emptyfields"); // send back to index.php and show error
-    exit();
-  }
-  else {
-    $sql = "SELECT * FROM user_tb WHERE uiUsers=?";
-    $stmt = mysqli_stmt_init($conn);
-    if (!mysqli_stmt_prepare($stmt, $sql)) {
-      header("Location:index.php?error=sqlerror"); // send back to index.php and show error
-      exit();
-    }
-    else {
-      mysqli_stmt_bind_param($stmt, "ss", $username, $password);// Grab information from Database
-      mysqli_stmt_execute($stmt);
-      $result = mysqli_stmt_get_result($result);
-      if ($row = mysqli_fetch_assoc()) {
-        $pwdCheck - password_verify($password, $row['password']); // Match the password
-        if ($pwdCheck == false) {
-          header("Location:index.php?error=wrongpassword"); // send back to index.php and show error
-          exit();
-        }
-        else if ($pwdCheck == true) {
-          // code...
-        }
-      }
-      else {
-        header("Location:index.php?error=nouser"); // send back to index.php and show error
-        exit();
-      }
-    }
-  }
-
+// Check if the user is already logged in, if yes then redirect him to welcome page
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    header("location: welcome.php");
+    exit;
 }
-else {
-  header("Location:index.php"); // send back to index.php
-  exit();
+
+// Include config file
+require_once "db.config.php";
+
+// Define variables and initialize with empty values
+$username = $password = "";
+$username_err = $password_err = "";
+
+// Processing form data when form is submitted
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+    // Check if username is empty
+    if(empty(trim($_POST["username"]))){
+        $username_err = "Please enter username.";
+    } else{
+        $username = trim($_POST["username"]);
+    }
+
+    // Check if password is empty
+    if(empty(trim($_POST["password"]))){
+        $password_err = "Please enter your password.";
+    } else{
+        $password = trim($_POST["password"]);
+    }
+
+    // Validate credentials
+    if(empty($username_err) && empty($password_err)){
+        // Prepare a select statement
+        $sql = "SELECT id, username, password FROM users WHERE username = ?";
+
+        if($stmt = $mysqli->prepare($sql)){
+            // Bind variables to the prepared statement as parameters
+            $stmt->bind_param("s", $param_username);
+
+            // Set parameters
+            $param_username = $username;
+
+            // Attempt to execute the prepared statement
+            if($stmt->execute()){
+                // Store result
+                $stmt->store_result();
+
+                // Check if username exists, if yes then verify password
+                if($stmt->num_rows == 1){
+                    // Bind result variables
+                    $stmt->bind_result($id, $username, $hashed_password);
+                    if($stmt->fetch()){
+                        if(password_verify($password, $hashed_password)){
+                            // Password is correct, so start a new session
+                            session_start();
+
+                            // Store data in session variables
+                            $_SESSION["loggedin"] = true;
+                            $_SESSION["id"] = $id;
+                            $_SESSION["username"] = $username;
+
+                            // Redirect user to welcome page
+                            header("location: welcome.php");
+                        } else{
+                            // Display an error message if password is not valid
+                            $password_err = "The password you entered was not valid.";
+                        }
+                    }
+                } else{
+                    // Display an error message if username doesn't exist
+                    $username_err = "No account found with that username.";
+                }
+            } else{
+                echo "Oops! Something went wrong. Please try again later.";
+            }
+
+            // Close statement
+            $stmt->close();
+        }
+    }
+
+    // Close connection
+    $mysqli->close();
 }
+?>
