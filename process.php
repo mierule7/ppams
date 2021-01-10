@@ -13,7 +13,8 @@ if (isset($_POST['save'])) {
 if (isset($_GET['delete'])) {
   $id = $_GET['delete'];
   $mysqli->query("DELETE FROM user WHERE id=$id")
-  or die($mysqli->error());
+  // or die($mysqli->error());
+  or die($mysqli->connect_error);
 
   // redirect back to user
   header("Location: user.php");

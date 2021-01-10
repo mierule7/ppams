@@ -126,7 +126,7 @@ else
     echo "0 results";
 }
 
-    $mysqli->close();
+    // $mysqli->close();
 
 ?>
 
