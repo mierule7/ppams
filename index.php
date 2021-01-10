@@ -1,5 +1,11 @@
 <?php
 require_once "login.php";
+require_once "db.config.php";
+
+// if (isset($_SESSION['login']))
+// {
+//   header("location: dashboard.php"); // Redirectiong to Dashboard
+// }
  ?>
 
 <!DOCTYPE html>
@@ -45,7 +51,7 @@ require_once "login.php";
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
-            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+            <p>Don't have an account? <a href="signup.php">Sign up now</a>.</p>
         </form>
     </div>
 </body>

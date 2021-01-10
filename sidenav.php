@@ -12,7 +12,7 @@
         <button onclick="myFunction()" class="dropbtn">Dropdown</button>
           <div id="myDropdown" class="dropdown-content">
             <a href="#home">Profile</a>
-            <a href="#about">Change Password</a>
+            <a href="reset.php">Change Password</a>
           </div>
 <!--
         <form action="profile.php" method="post" enctype="multipart/form-data"></form>
@@ -31,7 +31,7 @@
             <li><a href="setting.php">Setting</a></li>
           </ul>
       </div>
-      
+
 
         <!-- BARS -->
 <!--
@@ -45,7 +45,7 @@
 </header>
 
 <script>
-/* When the user clicks on the button, 
+/* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");

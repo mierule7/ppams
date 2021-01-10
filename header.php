@@ -8,7 +8,7 @@
             <a href="#" class="notify">Notification</a>
         </div>
         <div class="logout">
-          <input type="submit" name="logout" value="Logout">
+          <a href="logout.php"><input type="submit" name="logout" value="Logout"></a>
         </div>
     </nav>
   </div>
