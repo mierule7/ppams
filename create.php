@@ -64,26 +64,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     // Validate email address
-    // $input_email = trim($_POST["email"]);
-    // if(empty(trim($_POST["email"])))
-    // {
-    //   $email_err = "Please enter the email address.";
-    // } elseif(!filter_var($email, FILTER_VALIDATE_EMAIL))
-    // {
-    //   $email_err = "Please enter a valid email address.";
-    // } else{
-    //   $email = trim($_POST["email"]);
-    // }
-
-    if (empty($_POST["email"])) {
-    $email_err = "Email is required";
-    } else {
-    $email = test_input($_POST["email"]);
-    // check if e-mail address is well-formed
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $email_err = "Invalid email format";
+    $input_email = trim($_POST["email"]);
+    if(empty($input_email)){
+        $email_err = "Please enter the email address.";
+    } elseif(!filter_var($input_email, FILTER_VALIDATE_EMAIL)){
+        $email_err = "Please enter a valid email address.";
+    } else{
+        $email = $input_email;
     }
-  }
+
+
 
 
 
@@ -160,7 +150,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                       </div>
                         <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
                             <label>Email</label>
-                            <textarea name="address" class="form-control"><?php echo $email; ?></textarea>
+                            <textarea name="email" class="form-control"><?php echo $email; ?></textarea>
                             <span class="help-block"><?php echo $email_err;?></span>
                         </div>
                         <input type="submit" class="btn btn-primary" value="Submit">

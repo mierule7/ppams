@@ -24,14 +24,21 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
     <style type="text/css">
         .wrapper{
-            width: 650px;
+          top: 0;
+            width: 800px;
             margin: 0 auto;
+            border: 1px solid green;
+        }
+        .container-fluid {
+          border: 1px solid purple;
         }
         .page-header h2{
             margin-top: 0;
+            /* border: 1px solid purple; */ /*For Details*/
         }
         table tr td:last-child a{
             margin-right: 15px;
+            /* border: 1px solid blue; /*for icon*/ */
         }
     </style>
     <script type="text/javascript">
@@ -43,7 +50,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
 </head>
 <!-- ******************** THIS IS FOR HEADER ************************ -->
 
-<?php include 'header.php'; ?>
+
 
 <!-- **************************************************************** -->
 <!-- ******************* THIS IS FOR SIDENAV ************************ -->
@@ -56,9 +63,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
 
 
 
-<main>
-    <div class="main-wrapper">
-     <div class="back-colour">
        <body>
            <div class="wrapper">
                <div class="container-fluid">
@@ -76,7 +80,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
                            $i = 1;
 
                            // Attempt select query execution
-                           $sql = "SELECT * FROM users";
+                           $sql = "SELECT * FROM users ORDER BY username";
                            if($result = $mysqli->query($sql)){
                                if($result->num_rows > 0){
                                    echo "<table class='table table-bordered table-striped'>";

@@ -11,51 +11,42 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     // Get hidden input value
     $id = $_POST["id"];
 
-    // Validate username
+    // Validate name
     $input_username = trim($_POST["username"]);
     if(empty($input_username)){
-        $name_err = "Please enter a username.";
+        $username_err = "Please enter a username.";
     } elseif(!filter_var($input_username, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
-        $name_err = "Please enter a valid name.";
+        $username_err = "Please enter a valid username.";
     } else{
-        $name = $input_username;
+        $username = $input_username;
     }
 
     // Validate email address
     $input_email = trim($_POST["email"]);
     if(empty($input_email)){
-        $email_err = "Please enter an email.";
+        $email_err = "Please enter the email address.";
+    } elseif(!filter_var($input_email, FILTER_VALIDATE_EMAIL)){
+        $email_err = "Please enter a valid email address.";
     } else{
         $email = $input_email;
     }
-
-    // Validate salary
-    // $input_salary = trim($_POST["salary"]);
-    // if(empty($input_salary)){
-    //     $salary_err = "Please enter the salary amount.";
-    // } elseif(!ctype_digit($input_salary)){
-    //     $salary_err = "Please enter a positive integer value.";
-    // } else{
-    //     $salary = $input_salary;
-    // }
 
     // Check input errors before inserting in database
     if(empty($username_err) && empty($email_err)){
         // Prepare an update statement
         $sql = "UPDATE users SET username=?, email=? WHERE id=?";
 
-        if($stmt = mysqli_prepare($link, $sql)){
+        if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sssi", $param_username, $param_email, $param_id);
+            $stmt->bind_param("ssi", $param_username, $param_email, $param_id);
 
             // Set parameters
-            $param_name = $name;
+            $param_username = $username;
             $param_email = $email;
-            // $param_salary = $salary;
             $param_id = $id;
 
             // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
+            if($stmt->execute()){
                 // Records updated successfully. Redirect to landing page
                 header("location: user.php");
                 exit();
@@ -65,11 +56,11 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         }
 
         // Close statement
-        mysqli_stmt_close($stmt);
+        $stmt->close();
     }
 
     // Close connection
-    mysqli_close($link);
+    $mysqli->close();
 } else{
     // Check existence of id parameter before processing further
     if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
@@ -77,26 +68,25 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         $id =  trim($_GET["id"]);
 
         // Prepare a select statement
-        $sql = "SELECT * FROM user WHERE id = ?";
-        if($stmt = mysqli_prepare($link, $sql)){
+        $sql = "SELECT * FROM users WHERE id = ?";
+        if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "i", $param_id);
+            $stmt->bind_param("i", $param_id);
 
             // Set parameters
             $param_id = $id;
 
             // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
-                $result = mysqli_stmt_get_result($stmt);
+            if($stmt->execute()){
+                $result = $stmt->get_result();
 
-                if(mysqli_num_rows($result) == 1){
+                if($result->num_rows == 1){
                     /* Fetch result row as an associative array. Since the result set contains only one row, we don't need to use while loop */
-                    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                    $row = $result->fetch_array(MYSQLI_ASSOC);
 
                     // Retrieve individual field value
-                    $username = $row["name"];
-                    $email = $row["address"];
-                    // $salary = $row["salary"];
+                    $username = $row["username"];
+                    $email = $row["email"];
                 } else{
                     // URL doesn't contain valid id. Redirect to error page
                     header("location: error.php");
@@ -109,10 +99,10 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         }
 
         // Close statement
-        mysqli_stmt_close($stmt);
+        $stmt->close();
 
         // Close connection
-        mysqli_close($link);
+        $mysqli->close();
     }  else{
         // URL doesn't contain id parameter. Redirect to error page
         header("location: error.php");
@@ -144,24 +134,19 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     </div>
                     <p>Please edit the input values and submit to update the record.</p>
                     <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post">
-                        <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
-                            <label>Username</label>
-                            <input type="text" name="name" class="form-control" value="<?php echo $username; ?>">
+                        <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+                            <label>Name</label>
+                            <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
                             <span class="help-block"><?php echo $username_err;?></span>
                         </div>
-                        <div class="form-group <?php echo (!empty($address_err)) ? 'has-error' : ''; ?>">
+                        <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
                             <label>Email</label>
-                            <textarea name="address" class="form-control"><?php echo $email; ?></textarea>
+                            <input type="text" name="email" class="form-control" value="<?php echo $email; ?>">
                             <span class="help-block"><?php echo $email_err;?></span>
                         </div>
-                        <!-- <div class="form-group <?php echo (!empty($salary_err)) ? 'has-error' : ''; ?>">
-                            <label>Salary</label>
-                            <input type="text" name="salary" class="form-control" value="<?php echo $salary; ?>">
-                            <span class="help-block"><?php echo $salary_err;?></span>
-                        </div> -->
                         <input type="hidden" name="id" value="<?php echo $id; ?>"/>
                         <input type="submit" class="btn btn-primary" value="Submit">
-                        <a href="index.php" class="btn btn-default">Cancel</a>
+                        <a href="user.php" class="btn btn-default">Cancel</a>
                     </form>
                 </div>
             </div>
