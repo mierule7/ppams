@@ -67,7 +67,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
            <div class="wrapper">
                <div class="container-fluid">
                    <div class="row">
-                       <div class="col-md-12">
+                       <div class="col-md-1">
                            <div class="page-header clearfix">
                                <h2 class="pull-left">User Details</h2>
                                <a href="create.php" class="btn btn-success pull-right">Add New User</a>
@@ -78,12 +78,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
 
                            // Declare variables
                            $i = 1;
-
+                           // Limit data show on mysql_list_tables
+                           $limit = 5;
                            // Attempt select query execution
-                           $sql = "SELECT * FROM users ORDER BY username";
+                           $sql = "SELECT * FROM users ORDER BY username LIMIT $limit";
                            if($result = $mysqli->query($sql)){
                                if($result->num_rows > 0){
-                                   echo "<table class='table table-bordered table-striped'>";
+                                   echo "<table id='example' class='table table-bordered table-striped'>";
                                        echo "<thead>";
                                            echo "<tr>";
                                                echo "<th>No</th>";

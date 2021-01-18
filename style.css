@@ -1,10 +1,10 @@
-@font-face 
+@font-face
 {
   font-family: LuckiestGuy-Regular;
   src: url(font/LuckiestGuy-Regular.ttf);
 }
 
-@font-face 
+@font-face
 {
   font-family: BungeeShade-Regular;
   src: url(font/BungeeShade-Regular.ttf);
@@ -19,7 +19,7 @@ body {
 
 /*******************    This is login form    ******************/
 
-.login 
+.login
 {
     background-color: #F2D200;
     width: auto;
@@ -52,7 +52,7 @@ img {
     background-color: #4D4D4D;
 }
 
-.usr 
+.usr
 {
     top: 50%;
     position: relative;
@@ -61,7 +61,7 @@ img {
     text-align: center;
 }
 
-.pwd 
+.pwd
 {
     top: 50%;
     left: 2%;
@@ -70,7 +70,7 @@ img {
     text-align: center;
 }
 
-.btn 
+.btn
 {
     top: 60%;
     right: 14%;
@@ -81,10 +81,14 @@ img {
 
 /*******************    This is top bar    ******************/
 
-.top-bar 
+.top-bar
 {
 /*    border: 1px solid blue;*/
     position: relative;
+    /* padding: 0;
+    margin: 0; */
+    overflow: hidden;
+    height: 50px;
 }
 
 .navbar {
@@ -101,7 +105,7 @@ img {
     width: 100%;
 }
 
-.notification 
+.notification
 {
 /*    border: 1px solid yellow;*/
     position: absolute;
@@ -111,14 +115,14 @@ img {
     right:10%;
 }
 
-.logout 
+.logout
 {
     padding: 10px;
     margin: 5px;
     z-index: 1;
     position: absolute;
     right: 2%;
-    
+
 }
 
 /*******************    This is sidemenu    ******************/
@@ -132,7 +136,7 @@ img {
     padding: 0;
 }
 
-.icon 
+.icon
 {
     text-align: center;
     background-color: #F2D200;
@@ -141,7 +145,7 @@ img {
     display: inline-block;
 }
 
-.dropbtn 
+.dropbtn
 {
     border-radius: 50%;
     height: 100px;
@@ -151,12 +155,12 @@ img {
     cursor: pointer;
 }
 
-.dropbtn:hover, .dropbtn:focus 
+.dropbtn:hover, .dropbtn:focus
 {
     background-color: green;
 }
 
-.dropdown-content 
+.dropdown-content
 {
     display: none;
     position: absolute;
@@ -167,7 +171,7 @@ img {
     z-index: 1;
 }
 
-.dropdown-content a 
+.dropdown-content a
 {
     color: black;
     padding: 12px 16px;
@@ -175,17 +179,17 @@ img {
     display: block;
 }
 
-.icon a:hover 
+.icon a:hover
 {
     background-color: green;
 }
 
-.show 
+.show
 {
     display: block;
 }
 
-.menu-list 
+.menu-list
 {
     width: 100%;
     height: auto;
@@ -194,7 +198,7 @@ img {
     list-style-type: none;
 }
 
-.menu-list a 
+.menu-list a
 {
     text-decoration: none;
     background-color: white;
@@ -204,7 +208,7 @@ img {
     text-align: center;
 }
 
-.menu-list a:hover 
+.menu-list a:hover
 {
     color: white;
     background-color: purple;
@@ -216,7 +220,7 @@ img {
 
 /*******************    This is main content    ******************/
 
-.main-wrapper 
+.main-wrapper
 {
 /*    border: 1px solid green;*/
     height: 94.6%;
@@ -229,14 +233,14 @@ img {
     display: block;
 }
 
-.listing 
+.listing
 {
     left: 10px;
     right: 10px;
     bottom: 10px;
     top: 10px;
     position: absolute;
-    
+
     text-align: center;
     list-style-type: none;
     overflow: hidden;
@@ -252,7 +256,7 @@ img {
     text-align: center;
 }
 
-.listing li a 
+.listing li a
 {
     text-decoration: none;
     border: 1px solid black;
@@ -274,11 +278,11 @@ img {
 
 /* For smaller screen */
 /* On screens that are 992px wide or less, the background will change*/
-@media screen and (max-width: 992px) 
+@media screen and (max-width: 992px)
 {
-    
+
     /*******************    This is top bar    ******************/
-    .notification 
+    .notification
     {
         border: 1px solid yellow;
         position: absolute;
@@ -289,7 +293,7 @@ img {
         float: right;
     }
 
-    .logout 
+    .logout
     {
         padding: 10px;
         margin: 50px;
@@ -302,11 +306,11 @@ img {
 
 /* On screens that are 600px wide or less, the background will change*/
 
-@media screen and (max-width: 600px) 
+@media screen and (max-width: 600px)
 {
     /*******************    This is top bar    ******************/
-    
-        .notification 
+
+        .notification
     {
         border: 1px solid green;
         display: none;
@@ -314,7 +318,7 @@ img {
         float: left;
     }
 
-    .logout 
+    .logout
     {
         padding: 10px;
         margin: 5px;
@@ -322,17 +326,17 @@ img {
         position: absolute;
         right: 2%;
     }
-    
+
     /*******************    This is sidemenu    ******************/
-    
-    .sidemenu 
+
+    .sidemenu
     {
         width: 485px;
         background-color: #F2D200;
         overflow: hidden;
     }
 
-    .menu-list 
+    .menu-list
     {
         width: 390px;
         height: 670px;
@@ -342,7 +346,7 @@ img {
         list-style-type: none;
     }
 
-    .menu-list a 
+    .menu-list a
     {
         text-decoration: none;
         background-color: white;
@@ -353,12 +357,12 @@ img {
 
     }
 
-    .menu-list a:hover 
+    .menu-list a:hover
     {
         background-color: purple;
     }
 
-    .icon 
+    .icon
     {
         text-align: center;
         background-color: #F2D200;
@@ -367,7 +371,7 @@ img {
         display: inline-block;
     }
 
-    .dropbtn 
+    .dropbtn
     {
         border-radius: 50%;
         height: 100px;
@@ -377,12 +381,12 @@ img {
         cursor: pointer;
     }
 
-    .dropbtn:hover, .dropbtn:focus 
+    .dropbtn:hover, .dropbtn:focus
     {
       background-color: green;
     }
 
-    .dropdown-content 
+    .dropdown-content
     {
         display: none;
         position: absolute;
@@ -394,7 +398,7 @@ img {
         z-index: 1;
     }
 
-    .dropdown-content a 
+    .dropdown-content a
     {
         color: black;
         padding: 12px 16px;
@@ -402,20 +406,20 @@ img {
         display: block;
     }
 
-    .icon a:hover 
+    .icon a:hover
     {
         background-color: green;
     }
 
-    .show 
+    .show
     {
         display: block;
     }
-    
-/*******************    This is login form    ******************/
-    
 
-    .login 
+/*******************    This is login form    ******************/
+
+
+    .login
     {
         background-color: #F2D200;
         width: auto;
@@ -426,7 +430,7 @@ img {
         border: 1px solid black;
     }
 
-    .login-form 
+    .login-form
     {
         border: 1px solid pink;
         height: 100%;
@@ -437,7 +441,7 @@ img {
         background-color: #4D4D4D;
     }
 
-    .usr 
+    .usr
     {
         position: relative;
         padding: 5px;
@@ -446,7 +450,7 @@ img {
         display: block;
     }
 
-    .pwd 
+    .pwd
     {
         top: 50%;
         left: 2%;
@@ -456,7 +460,7 @@ img {
         display: block;
     }
 
-    .btn 
+    .btn
     {
         top: 60%;
         right: 14%;
@@ -465,10 +469,10 @@ img {
         position: relative;
         display: block;
     }
-    
+
     /*******************    This is main content    ******************/
 
-    .main-wrapper 
+    .main-wrapper
     {
         display: none;
     }
